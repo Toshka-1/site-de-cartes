@@ -1,0 +1,128 @@
+/* Réinitialisation des marges et paddings par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles pour le body */
+body {
+    background-image: linear-gradient(rgba(57, 13, 10, 0.6), rgba(57, 13, 10, 0.6)), url(https://images.ctfassets.net/s5n2t79q9icq/1RJfBURhOuSJba5feByRzk/f8352755ec2b3a015dd82568d74dba4c/Hsnfvfty23lnf0-1920x1040.jpg);
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: white; /* Texte par défaut en blanc */
+}
+
+/* Styles pour l'en-tête */
+.header {
+    background-color: black;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%; 
+    justify-content: flex-start; /* Alignement à gauche */
+}
+
+/* Styles pour le logo */
+.header .logo img {
+    width: 130px;
+    height: auto;
+}
+
+/* Styles pour la navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-start; /* Alignement à gauche */
+    margin-left: auto; /* Pousse la navigation vers la droite */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.nav ul li a:hover {
+    color: #ea3601;
+}
+
+/* Styles pour le conteneur principal */
+main {
+    width: 75%;
+    margin: 15px auto 0 auto; /* 15px en haut, centré horizontalement */
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement si nécessaire */
+    flex-direction: column; /* Contenu empilé verticalement */
+}
+
+/* Styles pour l'image de fond dans main */
+.image-fond {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Espacement en dessous de l'image de fond */
+    border-radius: 10px; /* Optionnel : arrondir les coins de l'image de fond */
+}
+
+/* Styles pour le conteneur de grille */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
+    grid-gap: 15px; /* Espacement de 15px entre les éléments */
+    width: 100%; /* Occupe toute la largeur du conteneur parent */
+}
+
+/* Styles pour les cartes */
+.card {
+    background-color: #333; /* Couleur de fond sombre pour les cartes */
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center; /* Centre le contenu textuel à l'intérieur des cartes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles pour les images des cartes */
+.card-img {
+    height: 320px;
+    width: 100%; /* Prend toute la largeur de son conteneur */
+    object-fit: cover; /* Ajuste l'image pour couvrir le conteneur sans déformation */
+    border-radius: 10px; /* Correction de '1Opx' en '10px' */
+}
+
+/* Styles pour les noms des cartes */
+.card-name {
+    color: antiquewhite;
+    font-weight: 500;
+    margin-top: 10px; /* Espacement au-dessus du nom */
+    font-size: 1.1em;
+}
+
+/* Styles pour le coût de mana des cartes */
+.mana-cost {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px; /* Espacement au-dessus du coût de mana */
+}
+
+.mana {
+    width: 15px; /* Largeur des images de mana */
+    margin: 2px; /* Espacement entre les symboles de mana */
+}
