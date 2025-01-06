@@ -1,0 +1,72 @@
+.logo {
+    width: 100px;
+}
+
+header {
+    display: flex;
+    background-color: blue;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: white; /* couleur du texte*/
+    font-weight: bold; /*texte en gras*/
+    text-transform: uppercase; /*texte en majuscule*/
+    text-decoration: none; 
+}
+
+.nav ul li a:hover {
+    color: orange;
+}
+
+main { 
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#grid-container {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    width: 100%;
+}
+
+.carte {
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-carte {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carte_nom {
+    color: red;
+    font-weight: 500;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.type {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
