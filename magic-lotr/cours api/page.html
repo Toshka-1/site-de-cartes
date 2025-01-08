@@ -10,3 +10,94 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu déroulant (click)</title>
+  <style>
+    /* ----- Style général du bouton et du menu ----- */
+    .dropdown {
+      position: relative;     /* pour positionner le sous-menu */
+      display: inline-block;  /* pour mettre le bouton et le menu sur la même ligne */
+      margin: 20px;           /* simple marge pour la démonstration */
+    }
+
+    /* Bouton du menu */
+    .dropbtn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn:hover {
+      background-color: #555;
+    }
+
+    /* Conteneur du sous-menu */
+    .dropdown-content {
+      display: none;               /* caché par défaut */
+      position: absolute;          /* se positionne par rapport au parent .dropdown */
+      background-color: #f9f9f9;   
+      min-width: 160px;           
+      border: 1px solid #ccc;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 999;               /* être au-dessus d’autres éléments */
+    }
+
+    /* Liens dans le sous-menu */
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;             /* chaque lien sur une nouvelle ligne */
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Classe qu’on toggle en JS pour afficher le menu */
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dropdown">
+    <button class="dropbtn">Services</button>
+    <div class="dropdown-content">
+      <a href="#">Service 1</a>
+      <a href="#">Service 2</a>
+      <a href="#">Service 3</a>
+    </div>
+  </div>
+
+  <!-- Autre contenu -->
+  <p>Contenu de la page...</p>
+
+  <script>
+    // Sélection du bouton
+    const dropbtn = document.querySelector('.dropbtn');
+    // Sélection du menu déroulant
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // Au clic sur le bouton, on affiche ou cache le sous-menu
+    dropbtn.addEventListener('click', (event) => {
+      event.preventDefault();  // évite un saut de page si c’est un <button> dans un <form>
+      dropdownContent.classList.toggle('show');
+    });
+
+    // Clique n’importe où dans la page :
+    window.addEventListener('click', (event) => {
+      // Si on clique en dehors du bouton, on ferme le menu
+      if (!event.target.matches('.dropbtn')) {
+        if (dropdownContent.classList.contains('show')) {
+          dropdownContent.classList.remove('show');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

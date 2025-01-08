@@ -88,3 +88,4 @@ async function afficherCartes() {
 
 // Appeler la fonction afficherCartes au chargement de la page
 window.addEventListener('DOMContentLoaded', afficherCartes);
+

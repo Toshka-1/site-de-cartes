@@ -36,3 +36,45 @@ async function ecricrecarte2() {
 
     }
 }
+
+async function updateData() {
+    const bodyObj = {
+      id: 123,
+      name: 'Jane Smith'
+    };
+  
+    try {
+      const response = await fetch('https://api.example.com/endpoint/123', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyObj)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Problème lors de la requête PUT : ' + response.statusText);
+      }
+  
+      const data = await response.json();
+      console.log('Données mises à jour :', data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // Méthode GET avec async/await
+async function getDataAsync() {
+    try {
+      const response = await fetch('https://api.example.com/endpoint');
+      if (!response.ok) {
+        throw new Error('Problème lors du fetch : ' + response.statusText);
+      }
+      const data = await response.json();
+      console.log('Données reçues (async/await) :', data);
+      // Traiter les données...
+    } catch (error) {
+      console.error('Erreur lors de la requête GET async/await :', error);
+    }
+  }
+
